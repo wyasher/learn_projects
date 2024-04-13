@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+source "https://gems.ruby-china.com/"
+
+
+
+group :development, :test do
+  gem 'benchmark-ips', '~> 2.10'
+  gem 'faker', '~> 3.1'
+  gem 'rspec', '~> 3.12'
+end
+
+group :test do
+  gem 'byebug', '~> 11.1'
+  gem 'rubocop', '~> 1.41', require: false
+  gem 'rubocop-rspec', '~> 2.16', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-cobertura', '~> 2.1', require: false
+end

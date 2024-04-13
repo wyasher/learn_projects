@@ -1,0 +1,50 @@
+#login {
+    width: 400px;
+    margin: 100px auto;
+    color: #444;
+}
+
+#login fieldset {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #fff;
+    border: none;
+    height: 200px;
+    box-shadow: 5px 5px 5px #888;
+}
+
+#login .user-info {
+    display: grid;
+    grid-template-columns: 3em 1fr;
+    gap: 10px;
+}
+
+#login fieldset legend {
+    font-size: large;
+    position: relative;
+    top: 30px;
+}
+
+#login .user-info input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #888;
+}
+
+#login .user-info input:focus {
+    background-color: lightcyan;
+}
+
+#login .user-info button {
+    grid-column: 2;
+    padding: 5px 10px;
+    border: none;
+    background-color: lightseagreen;
+    color: white;
+}
+
+#login .user-info button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}

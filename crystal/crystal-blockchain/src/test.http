@@ -1,0 +1,10 @@
+###生成区块
+POST http://localhost:3000/new-block
+Content-Type: application/json
+
+{
+  "data": "今天星期几？"
+}
+### 查看区块
+GET http://localhost:3000
+Content-Type: application/json

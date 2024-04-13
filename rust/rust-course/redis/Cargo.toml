@@ -1,0 +1,28 @@
+[package]
+name = "redis"
+version = "0.1.0"
+edition = "2021"
+
+# https://github.com/sunface/rust-by-practice/blob/master/zh-CN/assets/mini-redis/Cargo.toml
+[[bin]]
+name = "mini-redis-cli"
+path = "src/bin/client.rs"
+
+[[bin]]
+name = "mini-redis-server"
+path = "src/bin/server.rs"
+
+[dependencies]
+async-stream = "0.3.0"
+atoi = "0.3.2"
+bytes = "1"
+structopt = "0.3.14"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+tracing = "0.1.13"
+tracing-futures = { version = "0.2.3" }
+tracing-subscriber = "0.2.2"
+
+[dev-dependencies]
+# Enable test-utilities in dev mode only. This is mostly for tests.
+tokio = { version = "1", features = ["test-util"] }

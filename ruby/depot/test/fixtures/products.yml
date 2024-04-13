@@ -1,0 +1,18 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  image_url: https://img11.360buyimg.com/n7/jfs/t1/190610/17/25727/35590/62b27acdEd861c52d/bb992d328c539da8.jpg
+  price: 9.99
+
+two:
+  title: MyString
+  description: MyText
+  image_url: https://img12.360buyimg.com/n7/jfs/t1/146713/22/30645/61866/648bc2beF3c042622/0e406d23dc2a1a2a.jpg
+  price: 9.99
+ruby:
+  title: Ruby
+  description: Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+  price: 49.50
+  image_url: https://www.ruby-lang.org/images/header-ruby-logo.png

@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "admin-srv",
+    "blog-auth",
+    "blog-backend",
+    "blog-frontend",
+    "blog-proto",
+    "blog-utils",
+    "blog-types",
+    "topic-srv",
+    "category-srv"
+
+]

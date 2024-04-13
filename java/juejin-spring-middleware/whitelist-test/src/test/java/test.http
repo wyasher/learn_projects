@@ -1,0 +1,4 @@
+### success test
+GET http://localhost:8081/api/queryUserInfo?userId=aaa
+### fail test
+GET http://localhost:8081/api/queryUserInfo?userId=444

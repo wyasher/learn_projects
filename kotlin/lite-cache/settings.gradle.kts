@@ -1,0 +1,3 @@
+
+rootProject.name = "lite-cache"
+

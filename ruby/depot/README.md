@@ -1,0 +1,3 @@
+rails7 创建一个商品售卖项目
+
+参考资料:Agile_Web_Development_with_Rails_7

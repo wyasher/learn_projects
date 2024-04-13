@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wy</groupId>
+  <artifactId>juejin-spring-middleware</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Archetype - juejin-spring-middleware</name>
+  <url>http://maven.apache.org</url>
+  <modules>
+    <module>whitelist</module>
+    <module>whitelist-test</module>
+      <module>hystrix</module>
+      <module>hystrix-test</module>
+      <module>rate-limiter</module>
+      <module>rate-limiter-test</module>
+  </modules>
+  <dependencyManagement>
+    <!-- SpringBoot的依赖配置-->
+     <dependencies>
+       <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-dependencies</artifactId>
+         <version>2.5.15</version>
+         <type>pom</type>
+         <scope>import</scope>
+       </dependency>
+     </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

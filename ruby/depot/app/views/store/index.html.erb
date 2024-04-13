@@ -1,0 +1,18 @@
+<div class="w-full">
+  <%= render 'notice' %>
+  <h1 class="font-bold text-xl mb-6 pb-2 border-b-2">
+    Your Pragmatic Catalog
+  </h1>
+
+  <%= turbo_stream_from 'product' %>
+
+  <ul>
+    <% cache @products do %>
+      <% @products.each do |product| %>
+        <% cache product do %>
+          <%= render partial: 'product', object: product %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

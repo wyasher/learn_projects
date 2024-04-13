@@ -1,0 +1,46 @@
+/*表单样式*/
+.content table {
+    width: 500px;
+    height: 300px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 5px 5px 5px #999;
+    color: #555;
+}
+
+.content table caption {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.content table tbody tr:last-of-type td:last-of-type {
+    text-align: center;
+}
+
+.content form input {
+    border: none;
+    border-bottom: 1px solid;
+    height: 20px;
+
+}
+
+.content form input:focus {
+    background-color: lightcyan;
+    outline: none;
+    border-bottom: 1px solid #555555;
+}
+
+.content form button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: lightseagreen;
+}
+
+.content form button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}

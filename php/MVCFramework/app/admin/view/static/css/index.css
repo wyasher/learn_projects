@@ -1,0 +1,67 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    min-width: 1330px;
+    display: grid;
+    gap: 2px 0;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 80px 1fr;
+}
+
+.container > .top, .container > .left {
+
+    background-color: lightseagreen;
+    color: white;
+    text-shadow: 1px 1px 1px #333;
+
+}
+
+.container > .top {
+    grid-column: span 2;
+
+    padding: 30px;
+    font-size: 18px;
+
+    display: flex;
+    place-content: space-between;
+    place-items: center;
+}
+
+.container > .top .title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.container > .top .user button {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: lightseagreen;
+    padding: 8px 20px;
+    margin-left: 5px;
+}
+
+.container > .top .user button:hover {
+    background-color: coral;
+    color: white;
+    cursor: pointer;
+}
+
+.container > .left .menu {
+    padding: 30px;
+    display: grid;
+    gap: 15px;
+    margin: auto;
+}
+
+.container > .left a {
+    color: white;
+    text-decoration: none;
+}
+
+.container > .left a:hover {
+    color: gold;
+}
+
+
+

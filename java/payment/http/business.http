@@ -1,0 +1,4 @@
+http://localhost:8001/business/test/hello
+
+###查询课程
+http://localhost:8001/business/course/query-list?page=2&size=2

@@ -1,0 +1,17 @@
+name: crystal-blockchain
+version: 0.1.0
+
+authors:
+  - wangyang <1440214507@qq.com>
+
+targets:
+  crystal-blockchain:
+    main: src/crystal-blockchain.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: 1.8.2
+
+license: MIT
