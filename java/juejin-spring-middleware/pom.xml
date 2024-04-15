@@ -14,6 +14,8 @@
       <module>hystrix-test</module>
       <module>rate-limiter</module>
       <module>rate-limiter-test</module>
+    <module>method-ext</module>
+    <module>method-ext-test</module>
   </modules>
   <dependencyManagement>
     <!-- SpringBoot的依赖配置-->
