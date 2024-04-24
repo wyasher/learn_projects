@@ -1,0 +1,1 @@
+GET http://localhost:8001/api/queryUserInfoById?userId=1001
