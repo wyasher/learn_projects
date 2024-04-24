@@ -18,6 +18,8 @@
         <module>method-ext-test</module>
         <module>db-router</module>
         <module>db-router-test</module>
+        <module>xredis</module>
+        <module>xredis-test</module>
     </modules>
     <dependencyManagement>
         <!-- SpringBoot的依赖配置-->
