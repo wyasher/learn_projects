@@ -1,0 +1,14 @@
+# 忽略所有bin和obj目录
+**/bin
+**/obj
+
+# 忽略Visual Studio生成的文件
+*.user
+*.suo
+*.vs
+
+# 忽略 ReSharper 文件
+_ReSharper*/
+
+# 忽略 NuGet 包目录
+packages/
