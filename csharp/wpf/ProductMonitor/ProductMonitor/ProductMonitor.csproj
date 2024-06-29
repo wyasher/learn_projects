@@ -20,7 +20,6 @@
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
     <Folder Include="UserControl\" />
-    <Folder Include="Dict\" />
   </ItemGroup>
 
   <ItemGroup>

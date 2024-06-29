@@ -20,5 +20,10 @@ namespace ProductMonitor
         {
             InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs a)
+        {
+            MessageBox.Show("hello world");
+        }
     }
+  
 }

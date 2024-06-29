@@ -40,6 +40,47 @@
                     <TextBlock Text="生成监控平台" Foreground="White" FontSize="16"></TextBlock>
                     <TextBlock Text="谁也无法阻碍你的进步，只有你自己！" Foreground="White" FontSize="12" Margin="0,2,0,0"></TextBlock>
                 </StackPanel>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="Transparent" WindowChrome.IsHitTestVisibleInChrome="True">
+                        <Button Content="&#xe624;" Click="Button_Click" Style="{StaticResource OperateBtnStyle}"></Button>
+                        <Button Content="&#xe600;"  Style="{StaticResource OperateBtnStyle}"></Button>
+                        <Button Content="&#xe609;"  Style="{StaticResource OperateBtnStyle}" Background="DarkRed"></Button>
+                    </StackPanel>
+                    <Border  Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="#5518aabd"  >
+                        <Border.Background>
+                            <VisualBrush TileMode="FlipXY" Viewport="0,0,7,7" ViewportUnits="Absolute">
+                                <VisualBrush.Visual>
+                                    <Line X1="0" Y1="10" X2="10" Y2="0" Stroke="Gray" StrokeThickness="1"></Line>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Border.Background>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+        <!--内容-->
+        <!--底部-->
+        <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="#5518aabd">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border  BorderThickness="0,1,0,0" BorderBrush="#5518aabd"  >
+                    <Border.Background>
+                        <VisualBrush TileMode="FlipXY" Viewport="0,0,7,7" ViewportUnits="Absolute">
+                            <VisualBrush.Visual>
+                                <Line X1="0" Y1="10" X2="10" Y2="0" Stroke="Gray" StrokeThickness="1"></Line>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Border.Background>
+                </Border>
+                <TextBlock VerticalAlignment="Center" Grid.Column="1" FontSize="14" Foreground="White" Margin="10,0,10,0" Text="学习让我进度"></TextBlock>
+
             </Grid>
         </Border>
 
