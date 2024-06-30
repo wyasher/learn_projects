@@ -18,8 +18,6 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="View\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="UserControl\" />
   </ItemGroup>
 
   <ItemGroup>

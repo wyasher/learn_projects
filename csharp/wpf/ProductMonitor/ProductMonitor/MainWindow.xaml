@@ -46,7 +46,7 @@
                         <RowDefinition Height="15"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="Transparent" WindowChrome.IsHitTestVisibleInChrome="True">
-                        <Button Content="&#xe624;" Click="Button_Click" Style="{StaticResource OperateBtnStyle}"></Button>
+                        <Button Content="&#xe624;"  Style="{StaticResource OperateBtnStyle}"></Button>
                         <Button Content="&#xe600;"  Style="{StaticResource OperateBtnStyle}"></Button>
                         <Button Content="&#xe609;"  Style="{StaticResource OperateBtnStyle}" Background="DarkRed"></Button>
                     </StackPanel>
@@ -63,6 +63,7 @@
             </Grid>
         </Border>
         <!--内容-->
+        <ContentControl Grid.Row="1" Content="{Binding MonitorUserControl}"></ContentControl>
         <!--底部-->
         <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="#5518aabd">
             <Grid >
