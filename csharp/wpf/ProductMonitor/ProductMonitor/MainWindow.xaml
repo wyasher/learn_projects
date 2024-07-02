@@ -81,7 +81,7 @@
                     </Border.Background>
                 </Border>
                 <TextBlock VerticalAlignment="Center" Grid.Column="1" FontSize="14" Foreground="White" Margin="10,0,10,0" Text="学习让我进度"></TextBlock>
-
+                
             </Grid>
         </Border>
 
