@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using ProductMonitor.Model;
 using ProductMonitor.UserControls;
 
 namespace ProductMonitor.ViewModel
@@ -13,6 +14,47 @@ namespace ProductMonitor.ViewModel
 
     internal class MainWindowViewModel : INotifyPropertyChanged
     {
+
+
+        public MainWindowViewModel()
+        {
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "光照(Lux)",
+                ItemValue = 123
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "噪音(db)",
+                ItemValue = 55
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "温度(℃)",
+                ItemValue = 80
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "湿度(%)",
+                ItemValue = 43
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "PM2.5(m3)",
+                ItemValue = 123
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "硫化氢(PPM)",
+                ItemValue = 123
+            });
+            EnvironmentModels.Add(new EnvironmentModel
+            {
+                ItemTitle = "氮气(15)",
+                ItemValue = 123
+            });
+        }
+
         /// <summary>
         /// 监控用户控件
         /// </summary>
@@ -92,5 +134,22 @@ namespace ProductMonitor.ViewModel
                 return _badCount;
             }
         }
+
+        #region 环境监控数据
+
+        private List<EnvironmentModel> _environmentModels = [];
+
+        public List<EnvironmentModel> EnvironmentModels
+        {
+            get => _environmentModels;
+
+            set
+            {
+                _environmentModels = value;
+                PropertyChanged?.Invoke(this,new PropertyChangedEventArgs("EnvironmentModels"));
+            }
+        }
+
+        #endregion
     }
 }
