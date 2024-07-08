@@ -222,7 +222,48 @@
                     </Grid>
                 </GroupBox>
             </UniformGrid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="../Resource/Image/device.png"></Image>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <TextBlock Text="&#xe68d;" FontFamily="../Resource/Font/#iconfont" Foreground="#99ffffff" Margin="5,0"></TextBlock>
+                        <TextBlock Text="报警记录" Foreground="#99ffffff"></TextBlock>
+                    </StackPanel>
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding AlarmModels}" Margin="5,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="24">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="60"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Background="IndianRed" Height="6" Width="6" CornerRadius="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="{Binding Num}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#992bedfd"></TextBlock>
+                                    <TextBlock Grid.Column="2" Text="{Binding Msg}"  VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#992bedfd"></TextBlock>
+                                    <TextBlock Grid.Column="3" Text="{Binding Time}" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="#992bedfd"></TextBlock>
+                                    <TextBlock Grid.Column="4" Text="{Binding Duration,StringFormat=时长{0}秒}" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="#992bedfd"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                            
+                    </ItemsControl>
+                </Grid>
+            </Grid>
         </Grid>
-             
-    </Grid>
+    
+
+</Grid>
 </UserControl>     

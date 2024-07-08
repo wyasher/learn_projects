@@ -53,6 +53,35 @@ namespace ProductMonitor.ViewModel
                 ItemTitle = "氮气(15)",
                 ItemValue = 123
             });
+
+            AlarmModels.Add(new AlarmModel
+            {
+                Num = "01",
+                Msg = "设备温度过高",
+                Time = "2024-11-23 11:11:11",
+                Duration = 10
+            });
+            AlarmModels.Add(new AlarmModel
+            {
+                Num = "02",
+                Msg = "车间温度过高",
+                Time = "2024-11-23 11:11:11",
+                Duration = 13
+            });
+            AlarmModels.Add(new AlarmModel
+            {
+                Num = "03",
+                Msg = "设备转速过快",
+                Time = "2024-11-23 14:11:11",
+                Duration = 13
+            });
+            AlarmModels.Add(new AlarmModel
+            {
+                Num = "04",
+                Msg = "设备气压过低",
+                Time = "2024-11-23 20:11:11",
+                Duration = 20
+            });
         }
 
         /// <summary>
@@ -151,5 +180,19 @@ namespace ProductMonitor.ViewModel
         }
 
         #endregion
+
+        private List<AlarmModel> _alarmModels = [];
+
+        public List<AlarmModel> AlarmModels
+        {
+            get => _alarmModels;
+            set
+            {
+                _alarmModels = value;
+                PropertyChanged?.Invoke(this,new PropertyChangedEventArgs("AlarmModels"));
+            }
+
+        }
+
     }
 }
