@@ -53,6 +53,47 @@ namespace ProductMonitor.ViewModel
                 ItemTitle = "氮气(15)",
                 ItemValue = 123
             });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "电压(Kw.h)",
+                ItemValue = 11.4,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "电压(V)",
+                ItemValue = 222.4,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "电流(A)",
+                ItemValue = 5,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "压差(kpa)",
+                ItemValue = 13,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "温差(℃)",
+                ItemValue = 36,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "震动(mm/s)",
+                ItemValue = 4.1,
+            });
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "转速(r/min)",
+                ItemValue = 2600,
+            });
+
+            DeviceModels.Add(new DeviceModel
+            {
+                ItemTitle = "气压(kpa)",
+                ItemValue = 0.3,
+            });
 
             AlarmModels.Add(new AlarmModel
             {
@@ -82,6 +123,13 @@ namespace ProductMonitor.ViewModel
                 Time = "2024-11-23 20:11:11",
                 Duration = 20
             });
+
+            RadarModels.Add(new RadarModel { ItemName = "排烟风机", Value = 90 });
+            RadarModels.Add(new RadarModel { ItemName = "客梯", Value = 30.00 });
+            RadarModels.Add(new RadarModel { ItemName = "供水机", Value = 34.89 });
+            RadarModels.Add(new RadarModel { ItemName = "喷淋水泵", Value = 69.59 });
+            RadarModels.Add(new RadarModel { ItemName = "稳压设备", Value = 20 });
+
         }
 
         /// <summary>
@@ -108,7 +156,7 @@ namespace ProductMonitor.ViewModel
         public string TimeStr => DateTime.Now.ToString("HH:mm");
         public string DateStr => DateTime.Now.ToString("yyyy-MM-dd");
 
-        private string[] weekDays = {"星期一","星期二","星期三","星期四","星期五","星期六","星期天" };
+        private string[] weekDays = { "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天" };
 
         public string WeekStr
         {
@@ -164,6 +212,18 @@ namespace ProductMonitor.ViewModel
             }
         }
 
+        private List<DeviceModel> _deviceModels = [];
+
+        public List<DeviceModel> DeviceModels
+        {
+            get => _deviceModels;
+
+            set
+            {
+                _deviceModels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DeviceModels"));
+            }
+        }
         #region 环境监控数据
 
         private List<EnvironmentModel> _environmentModels = [];
@@ -192,6 +252,20 @@ namespace ProductMonitor.ViewModel
                 PropertyChanged?.Invoke(this,new PropertyChangedEventArgs("AlarmModels"));
             }
 
+        }
+
+
+        private List<RadarModel> _radarModels = [];
+
+        public List<RadarModel> RadarModels
+        {
+            get => _radarModels;
+            set
+            {
+                _radarModels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RadarModels)));
+
+            }
         }
 
     }

@@ -261,7 +261,57 @@
                             
                     </ItemsControl>
                 </Grid>
+                <GroupBox Grid.Row="2" Header="数据异常报警比例" Margin="0,5">
+                    <lvc:PieChart InnerRadius="30" Margin="0,40,0,20">
+                        <lvc:PieChart.Resources>
+                            <Style TargetType="lvc:PieSeries">
+                                <Setter Property="DataLabelsTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Point.SeriesView.Title}" Margin="0,0,5,0" Foreground="#44ffffff"></TextBlock>
+                                                <TextBlock Text="{Binding Point.SeriesView.Values[0]}" Margin="0,0,5,0" Foreground="#44ffffff"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </lvc:PieChart.Resources>
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Values="20" Title="压差"  DataLabels="True" StrokeThickness="0" LabelPosition="OutsideSlice"></lvc:PieSeries>
+                            <lvc:PieSeries Values="40" Title="震动" DataLabels="True" StrokeThickness="0" LabelPosition="OutsideSlice"></lvc:PieSeries>
+                            <lvc:PieSeries Values="10" Title="设备温度" DataLabels="True" StrokeThickness="0" LabelPosition="OutsideSlice"></lvc:PieSeries>
+                            <lvc:PieSeries Values="20" Title="光照" DataLabels="True" StrokeThickness="0" LabelPosition="OutsideSlice"></lvc:PieSeries>
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+                </GroupBox>
+
             </Grid>
+            <UniformGrid Grid.Column="2" Columns="1" Rows="3">
+                <GroupBox Header="设备">
+                    <ItemsControl ItemsSource="{Binding DeviceModels}" VerticalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="4">
+
+                                </UniformGrid>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5">
+                                    <TextBlock Text="{Binding ItemValue}" HorizontalAlignment="Center" FontSize="16" Foreground="#ff2bedf1" Margin="0,2"></TextBlock>
+                                    <TextBlock Text="{Binding ItemTitle}" HorizontalAlignment="Center" FontSize="12" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </GroupBox>
+                <GroupBox Header="能耗">
+                    <local:RadarUserControl ItemSource="{Binding RadarModels}"></local:RadarUserControl>
+                </GroupBox>
+                <GroupBox Header="人力"></GroupBox>
+            </UniformGrid>
         </Grid>
     
 

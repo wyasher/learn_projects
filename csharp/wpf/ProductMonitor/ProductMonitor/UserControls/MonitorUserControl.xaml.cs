@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProductMonitor.Model;
 
 namespace ProductMonitor.UserControls
 {
@@ -23,6 +24,14 @@ namespace ProductMonitor.UserControls
         public MonitorUserControl()
         {
             InitializeComponent();
+        }
+
+        private List<RadarModel> _itemSources = [];
+        public List<RadarModel> ItemSources { get=> _itemSources;
+            set
+            {
+                _itemSources = value;
+            }
         }
     }
 }
