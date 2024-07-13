@@ -124,11 +124,27 @@ namespace ProductMonitor.ViewModel
                 Duration = 20
             });
 
+            StuffOutWorkModels =
+            [
+                new StuffOutWorkModel { StuffName = "张晓婷", Position = "技术员", OutWorkCount = 123 },
+                new StuffOutWorkModel { StuffName = "李晓", Position = "操作员", OutWorkCount = 23 },
+                new StuffOutWorkModel { StuffName = "王克俭", Position = "技术员", OutWorkCount = 134 },
+                new StuffOutWorkModel { StuffName = "陈家栋", Position = "统计员", OutWorkCount = 143 },
+                new StuffOutWorkModel { StuffName = "杨过", Position = "技术员", OutWorkCount = 12 },
+            ];
+
+
             RadarModels.Add(new RadarModel { ItemName = "排烟风机", Value = 90 });
             RadarModels.Add(new RadarModel { ItemName = "客梯", Value = 30.00 });
             RadarModels.Add(new RadarModel { ItemName = "供水机", Value = 34.89 });
             RadarModels.Add(new RadarModel { ItemName = "喷淋水泵", Value = 69.59 });
             RadarModels.Add(new RadarModel { ItemName = "稳压设备", Value = 20 });
+
+            WorkShopModels.Add(new WorkShopModel { WorkShopName = "贴片车间", WorkingCount = 32, WaitCount = 8, WrongCount = 4, StopCount = 0 });
+            WorkShopModels.Add(new WorkShopModel { WorkShopName = "封装车间", WorkingCount = 20, WaitCount = 8, WrongCount = 4, StopCount = 0 });
+            WorkShopModels.Add(new WorkShopModel { WorkShopName = "焊接车间", WorkingCount = 68, WaitCount = 8, WrongCount = 4, StopCount = 0 });
+            WorkShopModels.Add(new WorkShopModel { WorkShopName = "贴片车间", WorkingCount = 68, WaitCount = 8, WrongCount = 4, StopCount = 0 });
+
 
         }
 
@@ -265,6 +281,31 @@ namespace ProductMonitor.ViewModel
                 _radarModels = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RadarModels)));
 
+            }
+        }
+
+        private List<StuffOutWorkModel> _stuffOutWorkModels = [];
+
+        public List<StuffOutWorkModel> StuffOutWorkModels
+        {
+            get => _stuffOutWorkModels;
+            set
+            {
+                _stuffOutWorkModels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StuffOutWorkModels)));
+
+            }
+        }
+
+        private List<WorkShopModel> _workShopModels = [];
+
+        public List<WorkShopModel> WorkShopModels
+        {
+            get => _workShopModels;
+            set
+            {
+                _workShopModels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkShopModels)));
             }
         }
 

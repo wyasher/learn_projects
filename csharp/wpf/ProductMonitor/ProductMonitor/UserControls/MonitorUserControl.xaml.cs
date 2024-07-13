@@ -26,12 +26,6 @@ namespace ProductMonitor.UserControls
             InitializeComponent();
         }
 
-        private List<RadarModel> _itemSources = [];
-        public List<RadarModel> ItemSources { get=> _itemSources;
-            set
-            {
-                _itemSources = value;
-            }
-        }
+     
     }
 }
