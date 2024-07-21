@@ -376,7 +376,7 @@
                                        Foreground="#9918aabd" Margin="10,0"
                                        ></TextBlock>
                             <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0">
-                                <Hyperlink Foreground="White" TextDecorations="None">[详情]</Hyperlink>
+                                <Hyperlink Foreground="White" TextDecorations="None" Command="{Binding ShowDetailCommand,RelativeSource={RelativeSource AncestorType=Window}}">[详情]</Hyperlink>
                             </TextBlock>
                             <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <TextBlock Text="机台总数" Foreground="White" HorizontalAlignment="Center" FontSize="10"></TextBlock>
