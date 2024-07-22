@@ -64,6 +64,30 @@ namespace ProductMonitor
 
 
         public Command.Command GoBackMonitorCommand => new(GoBackMonitor);
+
+        // 最小化
+        private void BtnMin(object sender,RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        
+        // 关闭
+
+        private void BtnClose(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void ShowSettingWindow()
+        {
+            var settingsWindow = new SettingsWindow()
+            {
+                Owner = this
+            };
+            settingsWindow.ShowDialog();
+        }
+
+        public Command.Command ShowSettingCommand => new(ShowSettingWindow);
     }
   
 }

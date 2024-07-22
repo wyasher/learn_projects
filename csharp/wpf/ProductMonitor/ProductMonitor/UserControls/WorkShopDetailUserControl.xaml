@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProductMonitor.UserControls"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              Width="1200" Height="675">
     <UserControl.Resources>
@@ -80,7 +81,7 @@
                                     <Label VerticalAlignment="Center" Content="{Binding Status}" BorderBrush="LightGreen" Foreground="LightGreen" BorderThickness="1" Padding="5,1" FontSize="10"></Label>
                                 </StackPanel>
                                 <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2">
-                                    <Hyperlink TextDecorations="None" Foreground="#55ffffff">[详情]</Hyperlink>
+                                    <Hyperlink TextDecorations="None" Foreground="#55ffffff" Click="OpenDetail">[详情]</Hyperlink>
                                 </TextBlock>
                                 <TextBlock Grid.Row="3"  Foreground="#55ffffff" Margin="15,0" VerticalAlignment="Center">
                                     <Run Text="任务进度:"></Run>
@@ -99,5 +100,63 @@
             </ItemsControl>
 
         </ScrollViewer>
+
+        <Border Grid.Row="0" Grid.RowSpan="2" Background="#22000000" Name="DetailMachine"  Visibility="Collapsed">
+            <Border Name="DetailMachineContent" Background="#f5f7f9fa" VerticalAlignment="Bottom" BorderBrush="#aa3bedf1" BorderThickness="0,1,0,0">
+                <Grid Height="350">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="机台效率趋势图" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="#555" Margin="20,0"></TextBlock>
+                    <Button Grid.Row="0" Content="&#xe609;" Style="{StaticResource OperateBtnStyle}" Click="CloseDetail" HorizontalAlignment="Right" Foreground="#333" FontSize="20" VerticalAlignment="Center" Width="40" Height="40"></Button>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,0">
+                        <Border Width="8" Height="8" Margin="20,0,5,0"  Background="LightGreen"></Border>
+                        <TextBlock Text="作业"></TextBlock>
+                        <Border Width="8" Height="8" Margin="20,0,5,0"  Background="Orange"></Border>
+                        <TextBlock Text="等待"></TextBlock>
+                        <Border Width="8" Height="8" Margin="20,0,5,0"  Background="PaleVioletRed"></Border>
+                        <TextBlock Text="故障"></TextBlock>
+                        <Border Width="8" Height="8" Margin="20,0,5,0"  Background="LightGray"></Border>
+                        <TextBlock Text="停机"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Margin="40,0">
+                        <RadioButton Content="当日" IsChecked="True"></RadioButton>
+                        <RadioButton Content="当周"></RadioButton>
+                        <RadioButton Content="当月"></RadioButton>
+                        <RadioButton Content="当年"></RadioButton>
+                    </StackPanel>
+                    <lvc:CartesianChart Grid.Row="2" Margin="20,0">
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Labels="21-12,20-12,21-01,21-02,21-03,21-04,21-05,21-06,21-07,21-09,21-10,21-11,21-12,22-01,22-02,22-03,22-04,22-05,22-06,22-07">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Step="1" StrokeThickness="0"></lvc:Separator>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis MinValue="0" MaxValue="100">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Stroke="#08000000" ></lvc:Separator>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+
+                        <lvc:CartesianChart.Series>
+                            <lvc:StackedColumnSeries Values="34.02 ,36.72 ,73.80 ,54.18 ,87.73 ,61.63 ,71.22 ,56.96 ,47.21 ,42.67 ,49.14 ,76.79 ,77.42 ,68.08 ,62.95 ,73.94 ,44.93 ,39.66 ,55.21 ,33.18" Fill="LightGreen" MaxColumnWidth="15" Title="作业" StrokeThickness="0" ></lvc:StackedColumnSeries>
+
+                            <lvc:StackedColumnSeries Values="7.91,7.75,4.30,0.40,4.82,8.98,5.07,2.42,6.15,0.57,8.91,8.75,5.30,1.40,5.82,9.98,6.07,3.42,7.15,1.57" Fill="Orange" MaxColumnWidth="15" Title="等待" StrokeThickness="0" ></lvc:StackedColumnSeries>
+
+                            <lvc:StackedColumnSeries Values="19.50,19.51,7.87,15.63,5.57,13.69,10.25,10.99,15.45,13.87,0.94,12.94,11.17,2.36,11.53,5.02,1.01,12.60,4.80,19.40" Fill="PaleVioletRed" MaxColumnWidth="15" Title="故障" StrokeThickness="0" ></lvc:StackedColumnSeries>
+
+                            <lvc:StackedColumnSeries Values="38.57 ,36.02 ,14.03 ,29.79 ,1.87 ,15.69 ,13.45 ,29.63 ,31.18 ,42.89 ,41.01 ,1.52 ,6.11 ,28.15 ,19.70 ,11.06 ,47.98 ,44.33 ,32.84 ,45.85" Fill="LightGray" MaxColumnWidth="15" Title="停机" StrokeThickness="0" ></lvc:StackedColumnSeries>
+                        </lvc:CartesianChart.Series>
+                    </lvc:CartesianChart>
+
+                </Grid>
+            </Border>
+            
+        </Border>
     </Grid>
 </UserControl>

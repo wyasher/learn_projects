@@ -109,7 +109,7 @@
                 </ItemsControl>
             </StackPanel>
             <!--配置按钮-->
-            <Button Grid.Column="2" HorizontalAlignment="Right" Content="配置" Height="35" Width="80" VerticalAlignment="Center" 
+            <Button Command="{Binding ShowSettingCommand,RelativeSource={RelativeSource AncestorType=Window}}" Grid.Column="2" HorizontalAlignment="Right" Content="配置" Height="35" Width="80" VerticalAlignment="Center" 
                     Margin="20,0" Tag="&#xe625;"
                     Style="{StaticResource BtnStyle}"
                     >
